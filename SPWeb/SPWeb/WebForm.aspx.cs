@@ -30,13 +30,21 @@ namespace SPWeb
 
             if (IsPostBack)
             {
-                from = this.ListBox2.SelectedItem.Text;
-                if (from.CompareTo(all) == 0) from = string.Empty;
-
-                desiredSKU = this.ListBox3.SelectedItem.Text;
-                if (desiredSKU.CompareTo(all) == 0) desiredSKU = string.Empty;
-
                 refreshfromWeb = "n";
+
+                from = this.ListBox2.SelectedItem.Text;
+                if (from.CompareTo(all) == 0)
+                {
+                    from = string.Empty;
+                    refreshfromWeb = string.Empty;
+                }
+                desiredSKU = this.ListBox3.SelectedItem.Text;
+                if (desiredSKU.CompareTo(all) == 0)
+                {
+                    desiredSKU = string.Empty;
+                    refreshfromWeb = string.Empty;
+                }
+              
              
             }
           
