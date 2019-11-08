@@ -50,23 +50,21 @@ namespace SPWeb
                 TableTools.Merge(dt, destiny);
 
                 currencyNodes = dataset.Rates.SelectDistinctFrom();
-           
 
-                //load totals
-                DataTable txs = client.LoadTransactions(from, desiredSKU, "y", string.Empty, refreshfromWeb);
 
-                 destiny = dataset.TransactionsTotals;
 
-                TableTools.Merge(txs, destiny);
 
-                 txs = client.LoadTransactions(from, desiredSKU, string.Empty, string.Empty, "n");
-
+            DataTable txs = client.LoadTransactions(from, desiredSKU, string.Empty, string.Empty, refreshfromWeb);
                  destiny = dataset.Transactions;
-
                 TableTools.Merge(txs, destiny);
 
                 skus = dataset.Transactions.SelectDistinctSKU();
 
+            //load totals
+             txs = client.LoadTransactions(from, desiredSKU, "y", string.Empty, "n");
+
+            destiny = dataset.TransactionsTotals;
+            TableTools.Merge(txs, destiny);
 
 
             object binding = dataset.Rates;
