@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/SPWeb/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/SPWeb/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/SPWeb/">
+      <s:element name="LoadRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="currencyFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currencyTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refreshFromWeb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadRatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="desiredCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desiredSKU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="justTotals" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderByColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refreshFromWeb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadTransactionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadRates" />
+  </wsdl:message>
+  <wsdl:message name="LoadRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadTransactions" />
+  </wsdl:message>
+  <wsdl:message name="LoadTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SPWSSoap">
+    <wsdl:operation name="LoadRates">
+      <wsdl:input message="tns:LoadRatesSoapIn" />
+      <wsdl:output message="tns:LoadRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTransactions">
+      <wsdl:input message="tns:LoadTransactionsSoapIn" />
+      <wsdl:output message="tns:LoadTransactionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SPWSSoap" type="tns:SPWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadRates">
+      <soap:operation soapAction="http://tempuri.org/SPWeb/LoadRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTransactions">
+      <soap:operation soapAction="http://tempuri.org/SPWeb/LoadTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SPWSSoap12" type="tns:SPWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadRates">
+      <soap12:operation soapAction="http://tempuri.org/SPWeb/LoadRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTransactions">
+      <soap12:operation soapAction="http://tempuri.org/SPWeb/LoadTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SPWS">
+    <wsdl:port name="SPWSSoap" binding="tns:SPWSSoap">
+      <soap:address location="http://localhost:52377/SPWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SPWSSoap12" binding="tns:SPWSSoap12">
+      <soap12:address location="http://localhost:52377/SPWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

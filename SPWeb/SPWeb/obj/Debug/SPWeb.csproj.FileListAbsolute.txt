@@ -1,0 +1,7 @@
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\bin\SPWeb.dll.config
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\bin\SPWeb.dll
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\bin\SPWeb.pdb
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\obj\Debug\SPWeb.csproj.CoreCompileInputs.cache
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\obj\Debug\SPWeb.dll
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\obj\Debug\SPWeb.pdb
+D:\Dropbox\My Software\SPWeb\SPWeb\SPWeb\obj\Debug\SPWeb.csprojAssemblyReference.cache
