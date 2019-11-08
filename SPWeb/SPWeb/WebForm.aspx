@@ -8,11 +8,7 @@
     <style type="text/css">
         .auto-style1 {
             height: 23px;
-            width: 262px;
-        }
-
-        .auto-style2 {
-            width: 147px;
+            width: 169px;
         }
 
         .auto-style3 {
@@ -21,6 +17,18 @@
 
         .auto-style4 {
             width: 262px;
+        }
+        .auto-style6 {
+            width: 131px;
+        }
+        .auto-style8 {
+            margin-left: 0;
+        }
+        .auto-style9 {
+            width: 205px;
+        }
+        .auto-style10 {
+            width: 169px;
         }
     </style>
 </head>
@@ -32,19 +40,20 @@
         <table style="width: 100%" aria-orientation="vertical">
             <caption>HOMEWORK FULVIO FARINA</caption>
             <tr>
-                <th class="auto-style4">SKUs</th>
-                <th class="auto-style2">Currencies</th>
-                <th>Rates</th>
+                <th class="auto-style10">SKUs</th>
+                <th class="auto-style6">Currencies</th>
+                <th class="auto-style9">Rates</th>
+               <th class="auto-style4">Nothing</th>
             </tr>
             <tr>
-                <td class="auto-style4">
-                    <asp:ListBox ID="ListBox3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBox2_SelectedIndexChanged" CssClass="auto-style3" Height="289px" Width="154px"></asp:ListBox>
+                <td class="auto-style10">
+                    <asp:ListBox ID="ratesListBox" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBox2_SelectedIndexChanged" CssClass="auto-style3" style="margin:0;padding:0;" Height="190px" Width="102px"></asp:ListBox>
                 </td>
-                <td class="auto-style2">
-                    <asp:ListBox ID="ListBox2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBox2_SelectedIndexChanged" Height="290px" Style="margin-top: 0px" Width="107px"></asp:ListBox>
+                <td class="auto-style6">
+                    <asp:ListBox ID="skuListBox" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBox2_SelectedIndexChanged" style="padding:0; margin-right: 0; margin-top: 0; margin-bottom: 0;" CssClass="auto-style8" Height="284px" Width="110px"></asp:ListBox>
                 </td>
-                <td>
-                    <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" CssClass="auto-style3" Height="269px" Width="221px">
+                <td class="auto-style9">
+                    <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" CssClass="auto-style3" style="width:100%;height:100%;margin:0;padding:0;" >
                         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
@@ -56,6 +65,7 @@
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
                 </td>
+                <td class="auto-style4">Empty Space</td>
             </tr>
 
             <tr>
@@ -63,8 +73,8 @@
             </tr>
             <tr>
 
-                <td class="auto-style4">
-                    <asp:GridView ID="GridView3" runat="server" EnableModelValidation="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" ShowFooter="True" HorizontalAlign="Justify">
+                <td class="auto-style10">
+                    <asp:GridView ID="GridView3" runat="server" EnableModelValidation="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" ShowFooter="True" HorizontalAlign="Justify" style="width:100%;height:100%;margin:0;padding:0;">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#7C6F57" HorizontalAlign="Justify" VerticalAlign="Middle" />
                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -79,8 +89,8 @@
                 <th class="auto-style1">Transactions</th>
             </tr>
             <tr>
-                <td class="auto-style4">
-                    <asp:GridView ID="GridView2" runat="server" EnableModelValidation="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" ShowFooter="True" HorizontalAlign="Justify">
+                <td class="auto-style10">
+                    <asp:GridView ID="GridView2" runat="server" EnableModelValidation="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" ShowFooter="True" HorizontalAlign="Justify" style="width:100%;height:100%;margin:0;padding:0;">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <EditRowStyle HorizontalAlign="Justify" VerticalAlign="Middle" />
                         <FooterStyle BackColor="#CCCCCC" />
