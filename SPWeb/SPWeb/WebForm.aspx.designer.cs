@@ -28,7 +28,7 @@ namespace SPWeb {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox3;
+        protected global::System.Web.UI.WebControls.ListBox skuListBox;
         
         /// <summary>
         /// ListBox2 control.
@@ -37,7 +37,7 @@ namespace SPWeb {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        protected global::System.Web.UI.WebControls.ListBox ratesListBox;
         
         /// <summary>
         /// GridView1 control.
