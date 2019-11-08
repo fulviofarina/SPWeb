@@ -11,13 +11,7 @@ namespace SPWeb
     public partial class WebForm : System.Web.UI.Page
     {
 
-        string[] currencyNodes = null;
-        string[] skus = null;
-
-        string from = string.Empty;
-        string desiredSKU = string.Empty;
-
-        string all = "*";
+      
 
 
        
@@ -26,23 +20,33 @@ namespace SPWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string  refreshfromWeb = string.Empty;
+            string[] currencyNodes = null;
+            string[] skus = null;
+
+            string from = string.Empty;
+            string desiredSKU = string.Empty;
+
+            string all = "*";
+
+            string  refreshfromWebRts = string.Empty;
+
+            string refreshfromWebTxs = string.Empty;
 
             if (IsPostBack)
             {
-                refreshfromWeb = "n";
-
+                refreshfromWebRts = "n";
+                refreshfromWebTxs = "n";
                 from = this.ListBox2.SelectedItem.Text;
                 if (from.CompareTo(all) == 0)
                 {
                     from = string.Empty;
-                    refreshfromWeb = string.Empty;
+                    refreshfromWebRts = string.Empty;
                 }
                 desiredSKU = this.ListBox3.SelectedItem.Text;
                 if (desiredSKU.CompareTo(all) == 0)
                 {
                     desiredSKU = string.Empty;
-                    refreshfromWeb = string.Empty;
+                    refreshfromWebTxs = string.Empty;
                 }
               
              
@@ -53,21 +57,25 @@ namespace SPWeb
 
            
 
-                DataTable dt = client.LoadRates(from, string.Empty, string.Empty, refreshfromWeb);
+                DataTable dt = client.LoadRates(from, string.Empty, string.Empty, refreshfromWebRts);
                 DataTable destiny = dataset.Rates;
                 TableTools.Merge(dt, destiny);
 
+            if (!IsPostBack)
+            {
                 currencyNodes = dataset.Rates.SelectDistinctFrom();
+            }
 
 
 
-
-            DataTable txs = client.LoadTransactions(from, desiredSKU, string.Empty, string.Empty, refreshfromWeb);
+            DataTable txs = client.LoadTransactions(from, desiredSKU, string.Empty, string.Empty, refreshfromWebTxs);
                  destiny = dataset.Transactions;
                 TableTools.Merge(txs, destiny);
 
+            if (!IsPostBack)
+            {
                 skus = dataset.Transactions.SelectDistinctSKU();
-
+            }
             //load totals
              txs = client.LoadTransactions(from, desiredSKU, "y", string.Empty, "n");
 
@@ -87,14 +95,7 @@ namespace SPWeb
             theGrid = this.GridView2;
             bind(ref binding, ref theGrid);
 
-
-            //  ds.RatesDataTable rdt = dataset.Rates;
-
-            //   currencyNodes = rdt.SelectDistinctFrom();
-
-            //  this.ListBox2.SelectedIndexChanged += ListBox1_SelectedIndexChanged;
-
-            //      this.ListBox2.SelectedIndexChanged += ListBox1_SelectedIndexChanged;
+      
 
             if (!IsPostBack)
             {
